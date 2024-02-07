@@ -42,7 +42,6 @@ public class Property {
     @JsonIgnore
     private List<Offer> offers;
 
-//    @ManyToMany(mappedBy = "propertyList")
-////    @JsonManagedReference("property-FavoriteList")
-//    private List<FavoriteList> favoriteLists;
+    @ManyToMany(mappedBy = "propertyList")
+    private List<FavoriteList> favoriteLists;
 }

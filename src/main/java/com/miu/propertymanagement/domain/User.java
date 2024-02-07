@@ -49,11 +49,11 @@ public class User {
 //    @JsonIgnore
 //    private FavoriteList favoriteList = new FavoriteList();
 
-//    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
-//    @JoinTable(name = "user_favorite_properties",
-//            joinColumns = @JoinColumn(name = "user_id"),
-//            inverseJoinColumns = @JoinColumn(name = "property_id"))
-//    private List<Property> favoriteList;
+    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    @JoinTable(name = "user_favorite_properties",
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "property_id"))
+    private List<Property> favoriteList;
 
     public void addProperty(Property property) {
         this.propertyList.add(property);
