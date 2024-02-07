@@ -28,16 +28,6 @@ public class SecurityConfig {
         return http.csrf((csrf) -> csrf.disable())
                 .authorizeHttpRequests((matcher) -> matcher
                                 .requestMatchers("/**").permitAll()
-//                        .requestMatchers("/api/login").permitAll()
-//                        .requestMatchers("/api/register").permitAll()
-//                        .requestMatchers("/api/property/**").permitAll()
-//                        .requestMatchers(HttpMethod.GET, "/api/customers/*").permitAll()
-//                        .requestMatchers("/api/reservations/**").authenticated()
-//                        .requestMatchers("/api/reservations/CheckIn").hasRole(UserType.Customer.toString())
-//                        .requestMatchers("/api/reservations/CheckOut").hasRole(UserType.Customer.toString())
-//                        .requestMatchers("/api/reservations/*").hasRole(UserType.Admin.toString())
-//                        .requestMatchers("/api/products/**").hasRole(UserType.Admin.toString())
-//                        .requestMatchers("/api/customers/**").hasRole(UserType.Admin.toString())
 
                 )
                 .addFilterBefore(authenticationFilter, UsernamePasswordAuthenticationFilter.class)
