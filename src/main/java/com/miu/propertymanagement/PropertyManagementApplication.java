@@ -1,4 +1,4 @@
-package com.miu.demo;
+package com.miu.propertymanagement;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
