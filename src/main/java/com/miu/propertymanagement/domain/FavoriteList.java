@@ -19,6 +19,7 @@ public class FavoriteList {
     private User user;
 
     @ManyToMany
+//    @JsonManagedReference("property-FavoriteList")
     private List<Property> propertyList = new ArrayList<>();
 
     // Other properties and methods as needed

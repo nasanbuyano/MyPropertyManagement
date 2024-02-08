@@ -43,5 +43,6 @@ public class Property {
     private List<Offer> offers;
 
     @ManyToMany(mappedBy = "propertyList")
+//    @JsonManagedReference("property-FavoriteList")
     private List<FavoriteList> favoriteLists;
 }

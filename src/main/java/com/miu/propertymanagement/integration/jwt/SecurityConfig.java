@@ -1,7 +1,9 @@
 package com.miu.propertymanagement.integration.jwt;
 
+import com.miu.propertymanagement.domain.enums.UserType;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -27,7 +29,16 @@ public class SecurityConfig {
         AuthenticationFilter authenticationFilter = new AuthenticationFilter(jwtUtil);
         return http.csrf((csrf) -> csrf.disable())
                 .authorizeHttpRequests((matcher) -> matcher
-                                .requestMatchers("/**").permitAll()
+                        .requestMatchers("/api/property").permitAll()
+                        .requestMatchers("/api/login").permitAll()
+                        .requestMatchers("/api/register").permitAll()
+                        .requestMatchers("/api/message/**").authenticated()
+                        .requestMatchers(HttpMethod.GET, "/api/property/*").authenticated()
+                        .requestMatchers(HttpMethod.PUT, "/api/property/*").hasRole(UserType.Owner.toString())
+                        .requestMatchers(HttpMethod.DELETE, "/api/property/*").hasRole(UserType.Owner.toString())
+                        .requestMatchers("/api/owner/**").hasRole(UserType.Owner.toString())
+                        .requestMatchers("/api/customer/**").hasRole(UserType.Customer.toString())
+                        .requestMatchers("/api/admin/**").hasRole(UserType.Admin.toString())
 
                 )
                 .addFilterBefore(authenticationFilter, UsernamePasswordAuthenticationFilter.class)

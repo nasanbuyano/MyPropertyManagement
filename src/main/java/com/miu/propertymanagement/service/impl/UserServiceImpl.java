@@ -57,6 +57,7 @@ public class UserServiceImpl implements UserService {
         User user = modelMapper.map(registerRequestDTO, User.class);
 
         String encodedPassword = passwordEncoder.encode(registerRequestDTO.getPassword());
+        System.out.println(encodedPassword);
         Credential credential = new Credential();
         user.setCredential(credential);
         user.getCredential().setEmail(registerRequestDTO.getEmail());

@@ -1,15 +1,12 @@
 package com.miu.propertymanagement.domain.dto;
 
 //import com.miu.propertymanagement.domain.FavoriteList;
-import com.miu.propertymanagement.domain.Offer;
 import com.miu.propertymanagement.domain.enums.PropertyHomeType;
 import com.miu.propertymanagement.domain.enums.PropertySaleType;
 import com.miu.propertymanagement.domain.enums.PropertyStatus;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import java.util.List;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -29,7 +26,7 @@ public class PropertyDetailResponseDTO {
 
     private PropertyStatus propertyStatus;
 
-    private List<Offer> offers;
+//    private List<Offer> offers;
 
 //    private List<FavoriteList> favoriteLists;
 

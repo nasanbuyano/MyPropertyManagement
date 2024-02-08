@@ -32,8 +32,8 @@ public class FavoriteListServiceImpl implements FavoriteListService {
     private PropertyRepository propertyRepository;
 
     public FavoriteListResponseDTO addPropertyToFavoriteList(Integer userId, Integer propertyId) {
-        User user = userRepository.findById(userId).orElseThrow(() -> new IllegalArgumentException("User not found"));
-        Property property = propertyRepository.findById(propertyId).orElseThrow(() -> new IllegalArgumentException("Property not found"));
+        User user = userRepository.findById(userId).orElseThrow(() -> new PMSException("User not found"));
+        Property property = propertyRepository.findById(propertyId).orElseThrow(() -> new PMSException("Property not found"));
 
         if(user.getUserType() != UserType.Customer)
             throw new PMSException("Only customer can add property to Favorite list");
@@ -55,8 +55,8 @@ public class FavoriteListServiceImpl implements FavoriteListService {
 
     @Override
     public FavoriteListResponseDTO removePropertyFromFavoriteList(Integer userId, Integer propertyId) {
-        User user = userRepository.findById(userId).orElseThrow(() -> new IllegalArgumentException("User not found"));
-        Property property = propertyRepository.findById(propertyId).orElseThrow(() -> new IllegalArgumentException("Property not found"));
+        User user = userRepository.findById(userId).orElseThrow(() -> new PMSException("User not found"));
+        Property property = propertyRepository.findById(propertyId).orElseThrow(() -> new PMSException("Property not found"));
 
         if(user.getUserType() != UserType.Customer)
             throw new PMSException("Only customer can remove property from Favorite list");

@@ -11,11 +11,12 @@ import org.springframework.web.bind.annotation.*;
 @RequiredArgsConstructor
 @RequestMapping("/api")
 @RestController
+@CrossOrigin("*")
 public class MessageController {
     @Autowired
     private MessageService messageService;
 
-    @PostMapping("/sendMessage")
+    @PostMapping("/message/sendMessage")
     ResponseEntity<?> sendMessage(@RequestBody MessageRequestDTO messageRequestDTO) {
         messageService.sendMessage(messageRequestDTO);
         return ResponseEntity.status(HttpStatus.OK).build();

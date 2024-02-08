@@ -1,14 +1,14 @@
--- credential entity
-INSERT INTO credential (email, password) VALUES ('john@example.com', 'password123');
-INSERT INTO credential (email, password) VALUES ('jane@example.com', 'password456');
-INSERT INTO credential (email, password) VALUES ('michael@example.com', 'password789');
-INSERT INTO credential (email, password) VALUES ('emily@example.com', 'password012');
-INSERT INTO credential (email, password) VALUES ('david@example.com', 'password345');
-INSERT INTO credential (email, password) VALUES ('jennifer@example.com', 'password678');
-INSERT INTO credential (email, password) VALUES ('daniel@example.com', 'password901');
-INSERT INTO credential (email, password) VALUES ('lisa@example.com', 'password234');
-INSERT INTO credential (email, password) VALUES ('matthew@example.com', 'password567');
-INSERT INTO credential (email, password) VALUES ('sarah@example.com', 'password890');
+-- credential entity --password is 123
+INSERT INTO credential (email, password) VALUES ('john@example.com', '$2a$10$z6rX374vD.cQ8hIkrXt6w.F9mWXOrf75jtezAIi3X5Hl63GEcCRK2');
+INSERT INTO credential (email, password) VALUES ('jane@example.com', '$2a$10$z6rX374vD.cQ8hIkrXt6w.F9mWXOrf75jtezAIi3X5Hl63GEcCRK2');
+INSERT INTO credential (email, password) VALUES ('michael@example.com', '$2a$10$z6rX374vD.cQ8hIkrXt6w.F9mWXOrf75jtezAIi3X5Hl63GEcCRK2');
+INSERT INTO credential (email, password) VALUES ('emily@example.com', '$2a$10$z6rX374vD.cQ8hIkrXt6w.F9mWXOrf75jtezAIi3X5Hl63GEcCRK2');
+INSERT INTO credential (email, password) VALUES ('david@example.com', '$2a$10$z6rX374vD.cQ8hIkrXt6w.F9mWXOrf75jtezAIi3X5Hl63GEcCRK2');
+INSERT INTO credential (email, password) VALUES ('jennifer@example.com', '$2a$10$z6rX374vD.cQ8hIkrXt6w.F9mWXOrf75jtezAIi3X5Hl63GEcCRK2');
+INSERT INTO credential (email, password) VALUES ('daniel@example.com', '$2a$10$z6rX374vD.cQ8hIkrXt6w.F9mWXOrf75jtezAIi3X5Hl63GEcCRK2');
+INSERT INTO credential (email, password) VALUES ('lisa@example.com', '$2a$10$z6rX374vD.cQ8hIkrXt6w.F9mWXOrf75jtezAIi3X5Hl63GEcCRK2');
+INSERT INTO credential (email, password) VALUES ('matthew@example.com', '$2a$10$z6rX374vD.cQ8hIkrXt6w.F9mWXOrf75jtezAIi3X5Hl63GEcCRK2');
+INSERT INTO credential (email, password) VALUES ('sarah@example.com', '$2a$10$z6rX374vD.cQ8hIkrXt6w.F9mWXOrf75jtezAIi3X5Hl63GEcCRK2');
 
 -- user entity
 INSERT INTO user (credential_id, first_name, last_name, user_type, active) VALUES (1, 'John', 'Doe', 'Customer', true);

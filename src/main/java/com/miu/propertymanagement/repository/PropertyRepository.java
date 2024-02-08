@@ -9,5 +9,6 @@ import java.util.List;
 @Repository
 public interface PropertyRepository extends JpaRepository<Property, Integer> {
     List<Property> findAllByUser_Id(Integer user_id);
+
     List<Property> findAllByUser_Active(Boolean user_active);
 }
